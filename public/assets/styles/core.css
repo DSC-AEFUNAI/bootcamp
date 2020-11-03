@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url(../fonts/GoogleSans/GoogleSans-Regular-v1.27.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url(../fonts/GoogleSans/GoogleSans-Bold-v1.27.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(fonts/Roboto/Roboto-Regular.ttf);
+  font-weight: normal;
+}
+
+:root {
+  --blue-900: #174EA6;
+  --blue-800: #185ABC;
+  --blue-700: #1967D2;
+  --blue-600: #1A73E8;
+  --blue-core: #4285F4;
+  --blue-200: #D2E3FC;
+  --blue-100: #E8F0FE;
+  --red-900: #A50E0E;
+  --red-800: #B31412;
+  --red-700: #C5221F;
+  --red-600: #D93025;
+  --red-core: #EA4335;
+  --red-200: #FAD2CF;
+  --red-100: #FCE8E6;
+  --yellow-900: #E37400;
+  --yellow-800: #EA8600;
+  --yellow-700: #F29900;
+  --yellow-600: #F9AB00;
+  --yellow-core: #FBBC04;
+  --yellow-200: #FEEFC3;
+  --yellow-100: #FEF7E0;
+  --green-900: #0D652D;
+  --green-800: #137333;
+  --green-700: #188038;
+  --green-600: #1E8E3E;
+  --green-core: #34A853;
+  --green-200: #CEEAD6;
+  --green-100: #E6F4EA;
+  --grey: #898D91;
+  --black: #000;
+  --white: #FFF;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Google Sans', Roboto, sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+}
