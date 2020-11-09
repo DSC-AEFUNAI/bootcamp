@@ -6,7 +6,7 @@ const db = admin.firestore();
 
 exports.createNewMember = functions.auth.user().onCreate((member) => {
   return db.doc(`members/${member.uid}`)
-    .set({uid: member.uid, creationTime: member.metadata.creationTime}, {merge: true})
+    .set({uid: member.uid}, {merge: true})
     .catch((error) => console.log(error));
 });
 
