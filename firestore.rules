@@ -20,12 +20,13 @@ service cloud.firestore {
     
     match /members/{memberId} {
       allow create: if signedIn()
-        && isOwner(memberId) && isOwner(request.resource.data.uid)
-        && 'track' in resource.data;
+        && isOwner(memberId)
+        && isOwner(request.resource.data.uid)
+        && 'track' in request.resource.data;
       allow read: if signedIn();
       allow update: if signedIn() && isOwner(memberId) && uidNotChanged()
         && ((request.resource.data.track == resource.data.track) || 
-            (!('track' in resource.data) && 'track' in resource.data));
+            (!('track' in resource.data) && 'track' in request.resource.data));
       allow delete: if false;
     }
     

@@ -31,25 +31,53 @@
   <div class="sign-in">
     <div class="mdl-spinner mdl-js-spinner is-active sign-in__spinner"></div>
     <div id="sign-in" class="sign-in__wrapper mdl-shadow--2dp"></div>
-    <div class="mdl-card mdl-shadow--2dp signed-in signed-in__container element--hide">
+    <div class="mdl-card mdl-shadow--2dp signed-in element--hide">
       <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text signed-in__signed-in-heading element--hide">Signed In</h2>
-        <h2 class="mdl-card__title-text signed-in__verify-heading element--hide">Phone Verify Error</h2>
+        <h2 class="mdl-card__title-text"></h2>
       </div>
       <div class="mdl-card__supporting-text">
         <p>Dear <span class="signed-in__name signed-in__bold-text"></span>,<br>You are signed in with <span class="signed-in__email signed-in__bold-text"></span>.</p>
         <p class="signed-in__signed-in-message element--hide">Enter the bootcamp from here or sign out to sign in with another account. Thank you!</p>
         <p class="signed-in__verify-message element--hide">However, the phone number you just verified: <span class="signed-in__phone signed-in__bold-text"></span>, is currently in use by another DSC Member. Please re-verify with a different phone number. Thank you!</p>
+        <p class="signed-in__track-message element--hide">However, before you enter the bootcamp, you need to choose only one learning track among the following, from which you will be learning all through the bootcamp. Note that you can't change this after submitting.</p>
+        <div class="signed-in__track-buttons element--hide">
+          <form id="choose-track">
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="backend">
+              <input checked required class="mdl-radio__button" id="backend" name="track" type="radio"
+               value="backend">
+              <p class="mdl-radio__label track-def"><span class="signed-in__bold-text">Backend (with PHP)</span>:<br>Learn how to create the server logic that takes care of many websites and mobile applications today.</p>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="design">
+              <input class="mdl-radio__button" id="design" name="track" type="radio" value="design">
+              <p class="mdl-radio__label track-def"><span class="signed-in__bold-text">Design (UI/UX)</span>:<br>Learn how to create top-class User Interfaces and User Experiences for website and mobile applications</p>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="frontend">
+              <input class="mdl-radio__button" id="frontend" name="track" type="radio" value="frontend">
+              <p class="mdl-radio__label track-def"><span class="signed-in__bold-text">Frontend (HTML, CSS & JavaScript)</span>:<br>Learn how to make websites, how to create the part of a website that your end users see.</p>
+            </label>
+            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="ml">
+              <input class="mdl-radio__button" id="ml" name="track" type="radio" value="ml">
+              <p class="mdl-radio__label track-def"><span class="signed-in__bold-text">Python/Machine Learning</span>:<br>Learn how to create machines and models can replace human beings in the near future.</p>
+            </label>
+            <input class="element--hide" type="submit" id="submit-track">
+          </form>
+        </div>
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <button onclick="reVerifyPhone()" class="mdl-button 
+        <button onclick="reVerifyPhone()" type="button" class="mdl-button 
         mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect signed-in__verify-button element--hide">Verify Phone</button>
-        <button onclick="signOut()" class="mdl-button 
+        <button onclick="signOut()" type="button" class="mdl-button 
         mdl-button--colored mdl-js-button mdl-js-ripple-effect signed-in__sign-out-button element--hide">Sign Out</button>
         <a href="/" class="mdl-button 
         mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect signed-in__enter-button element--hide">Enter Bootcamp</a>
+        <label for="submit-track" class="mdl-button 
+        mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect signed-in__submit-button element--hide">Submit & Enter</label>
       </div>
     </div>
+  </div>
+  <div aria-live="assertive" aria-atomic="true" aria-relevant="text" class="mdl-snackbar mdl-js-snackbar">
+      <div class="mdl-snackbar__text"></div>
+      <button type="button" class="mdl-snackbar__action"></button>
   </div>
 </main>
 
@@ -68,6 +96,7 @@
 <script src="/__/firebase/8.0.0/firebase-app.js"></script>
 <script src="/__/firebase/8.0.0/firebase-auth.js"></script>
 <script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
+<script src="/__/firebase/8.0.0/firebase-firestore.js"></script>
 <script src="/__/firebase/init.js?useEmulator=true"></script>
 <script src="/assets/scripts/material.min.js"></script>
 <script src="/assets/scripts/mod-firebaseui-4.6.1.js"></script>

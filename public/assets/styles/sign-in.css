@@ -70,8 +70,17 @@ main {
   max-width: 512px;
 }
 
+.signed-in {
+  width: 100% !important;
+  max-width: 512px;
+}
+
 .signed-in__bold-text {
   font-weight: bold;
+}
+
+.mdl-radio {
+  height: auto;
 }
 
 .mdl-mini-footer {
