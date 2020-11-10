@@ -20,7 +20,7 @@ const showSignedIn = (user, type, phone = '') => {
     el('.signed-in__signed-in-heading').classList.remove('element--hide');
     el('.signed-in__signed-in-message').classList.remove('element--hide');
     el('.signed-in__sign-out-button').classList.remove('element--hide');
-    el('.signed-in__home-button').classList.remove('element--hide');
+    el('.signed-in__enter-button').classList.remove('element--hide');
     el('.signed-in__verify-heading').classList.add('element--hide');
     el('.signed-in__verify-message').classList.add('element--hide');
     el('.signed-in__verify-button').classList.add('element--hide');
@@ -31,7 +31,7 @@ const showSignedIn = (user, type, phone = '') => {
     el('.signed-in__signed-in-heading').classList.add('element--hide');
     el('.signed-in__signed-in-message').classList.add('element--hide');
     el('.signed-in__sign-out-button').classList.add('element--hide');
-    el('.signed-in__home-button').classList.add('element--hide');
+    el('.signed-in__enter-button').classList.add('element--hide');
     el('.signed-in__phone').textContent = phone;
   }
   el('.signed-in__name').textContent = user.displayName.split(' ')[0];

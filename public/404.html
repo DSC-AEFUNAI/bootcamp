@@ -34,21 +34,34 @@
     <div class="mdl-card__supporting-text">
       <p class="nf__welcome element--hide">Dear <span class="nf nf__name nf__bold-text"></span>,</p>
       <p class="nf nf__message">The page your requested was not found.</p>
-      <p class="nf nf__message--signed-in element--hide">No worries you could return to the home page from here.</p>
+      <p class="nf nf__message--signed-in element--hide">No worries you could return to enter the bootcamp from here.</p>
       <p class="nf nf__message--signed-out element--hide">But to access this platform you need to be sign in. Please sign in.</p>
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <a href="/sign-in" class="mdl-button 
       mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect nf__sign-in element--hide">Sign In</a>
       <a href="/" class="mdl-button 
-      mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect nf__home-button">Home</a>
+      mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect nf__enter-button">Enter Bootcamp</a>
     </div>
   </div>
 </main>
+
+<footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <img class="mdl-logo mdl-footer-logo" src="/assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
+  </div>
+  <div class="mdl-mini-footer__right-section">
+    <ul class="mdl-mini-footer__link-list">
+      <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://bit.ly/dscaefunaiwhatsapp" target="_blank" rel="noopener noreferrer">Help</a></li>
+      <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms</a></li>
+      <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a></li>
+    </ul>      
+  </div>
+</footer>
 <script src="/__/firebase/8.0.0/firebase-app.js"></script>
 <script src="/__/firebase/8.0.0/firebase-auth.js"></script>
 <script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
-<script src="/__/firebase/init.js"></script>
+<script src="/__/firebase/init.js?useEmulator=true"></script>
 <script src="/assets/scripts/material.min.js"></script>
 <script src="/assets/scripts/404.js"></script>
 </body>

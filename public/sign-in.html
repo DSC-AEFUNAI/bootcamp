@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -38,7 +38,7 @@
       </div>
       <div class="mdl-card__supporting-text">
         <p>Dear <span class="signed-in signed-in__name signed-in__bold-text"></span>,<br>You are signed in with <span class="signed-in signed-in__email signed-in__bold-text"></span>.</p>
-        <p class="signed-in signed-in__signed-in-message element--hide">Please go to the home page or sign out to sign in with another account. Thank you!</p>
+        <p class="signed-in signed-in__signed-in-message element--hide">Enter the bootcamp from here or sign out to sign in with another account. Thank you!</p>
         <p class="signed-in signed-in__verify-message element--hide">However, the phone number you just verified: <span class="signed-in signed-in__phone signed-in__bold-text"></span>, is currently in use by another DSC Member. Please re-verify with a different phone number. Thank you!</p>
       </div>
       <div class="mdl-card__actions mdl-card--border">
@@ -47,15 +47,28 @@
         <button onclick="signOut()" class="mdl-button 
         mdl-button--colored mdl-js-button mdl-js-ripple-effect signed-in__sign-out-button element--hide">Sign Out</button>
         <a href="/" class="mdl-button 
-        mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect signed-in__home-button element--hide">Go Home</a>
+        mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect signed-in__enter-button element--hide">Enter Bootcamp</a>
       </div>
     </div>
   </div>
 </main>
+
+<footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <img class="mdl-logo mdl-footer-logo" src="/assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
+  </div>
+  <div class="mdl-mini-footer__right-section">
+    <ul class="mdl-mini-footer__link-list">
+      <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://bit.ly/dscaefunaiwhatsapp" target="_blank" rel="noopener noreferrer">Help</a></li>
+      <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms</a></li>
+      <li><a class="mdl-button mdl-js-button mdl-js-ripple-effect" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a></li>
+    </ul>      
+  </div>
+</footer>
 <script src="/__/firebase/8.0.0/firebase-app.js"></script>
 <script src="/__/firebase/8.0.0/firebase-auth.js"></script>
 <script src="/__/firebase/8.0.0/firebase-analytics.js"></script>
-<script src="/__/firebase/init.js"></script>
+<script src="/__/firebase/init.js?useEmulator=true"></script>
 <script src="/assets/scripts/material.min.js"></script>
 <script src="/assets/scripts/mod-firebaseui-4.6.1.js"></script>
 <script src="/assets/scripts/sign-in.js"></script>

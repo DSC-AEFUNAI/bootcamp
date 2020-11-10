@@ -1,0 +1,56 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    function signedIn() {
+      return request.auth.uid != null;
+    }
+    
+    function isOwner(id) {
+      return request.auth.uid == id;
+    }
+    
+    function uidNotChanged() {
+      return (!('uid' in request.resource.data) && 'uid' in resource.data)
+        || (request.resource.data.uid == resource.data.uid);
+    }
+    
+    match /members/{memberId} {
+      allow create: if signedIn()
+        && isOwner(memberId) && isOwner(request.resource.data.uid)
+        && 'track' in resource.data;
+      allow read: if signedIn();
+      allow update: if signedIn() && isOwner(memberId) && uidNotChanged()
+        && ((request.resource.data.track == resource.data.track) || 
+            (!('track' in resource.data) && 'track' in resource.data));
+      allow delete: if false;
+    }
+    
+    match /mentors/{mentorId} {
+      allow create: if signedIn()
+        && isOwner(mentorId) && isOwner(request.resource.data.uid)
+        && 'track' in resource.data;
+      allow read: if signedIn();
+      allow update: if signedIn() && isOwner(mentorId) && uidNotChanged()
+        && ((request.resource.data.track == resource.data.track) || 
+            !('track' in request.resource.data));
+      allow delete: if false;
+    }
+    
+    match /headMentors/{headMentorId} {
+      allow create, get: if signedIn() && isOwner(headMentorId);
+      allow list, update, delete: if false;
+    }
+    
+    match /resources/{document=**} {
+      allow read: if true;
+      allow create, update: if signedIn() 
+        && get(/databases/$(database)/documents/headMentors/$(request.auth.uid))
+            .data.permitted == true;
+      allow delete: if false;
+    }
+  }
+}
