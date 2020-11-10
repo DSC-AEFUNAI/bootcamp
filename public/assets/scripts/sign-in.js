@@ -65,12 +65,7 @@ const showSignedIn = (user, type, phone = '') => {
 const checkHasTrack = async (uid) => {
   try {
     const dbMember = await firebase.firestore().doc(`members/${uid}`).get();
-    if (dbMember.exists
-        && ['frontend', 'backend', 'design', 'ml'].includes(dbMember.data().track)) {
-      return true;
-    } else {
-      return false;
-    }
+    return dbMember.exists && dbMember.data().track;
   } catch (error) {
     notification.MaterialSnackbar.showSnackbar({
       message: `Error: ${error.message}`,
@@ -137,8 +132,7 @@ chooseTrackForm.addEventListener('submit', async (e) => {
 });
 
 const checkHasTrackFromPhoneVerify = async (user) => {
-  const hasTrack = await checkHasTrack(user.uid);
-  if (hasTrack) {
+  if (await checkHasTrack(user.uid)) {
     showSignedIn(user, 0);
   } else {
     showSignedIn(user, 2);
@@ -182,11 +176,7 @@ const uiConfigPhone = {
 const uiConfigGoogle = {
   callbacks: {
     signInSuccessWithAuthResult: (authResult) => {
-      if (authResult.additionalUserInfo.isNewUser || !authResult.user.phoneNumber) {
-        return false;
-      } else {
-        return true;
-      }
+      return !authResult.additionalUserInfo.isNewUser && authResult.user.phoneNumber;
     },
     uiShown: () => el('.sign-in__spinner').classList.add('element--hide')
   },
@@ -203,8 +193,7 @@ const uiConfigGoogle = {
 firebase.auth().onAuthStateChanged(async (user) => {
   if (user) {
     if (user.phoneNumber) {
-      const hasTrack = await checkHasTrack(user.uid);
-      if (hasTrack) {
+      if (await checkHasTrack(user.uid)) {
         showSignedIn(user, 0);  
       } else {
         showSignedIn(user, 2);

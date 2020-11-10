@@ -1,7 +1,16 @@
 const el = (sel) => document.querySelector(sel);
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user && user.phoneNumber) {
+const checkHasTrack = async (uid) => {
+  try {
+    const dbMember = await firebase.firestore().doc(`members/${uid}`).get();
+    return dbMember.exists && dbMember.data().track;
+  } catch (error) {
+    return false;
+  }
+};
+
+firebase.auth().onAuthStateChanged(async (user) => {
+  if (user && user.phoneNumber && await checkHasTrack(user.uid)) {
     el('.nf__name').textContent = user.displayName.split(' ')[0];
     el('.nf__welcome').classList.remove('element--hide');
     el('.nf__message--signed-in').classList.remove('element--hide');
