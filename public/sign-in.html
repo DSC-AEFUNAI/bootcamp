@@ -22,24 +22,24 @@
 </head>
 <body>
 <main>
-  <section class="header header__container">
-    <img class="header header__image" src="/assets/images/logo-vertical.png" alt="DSC AE-FUNAI logo">
-    <img class="header header__image" src="/assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
-    <h1 class="header header__title">Welcome</h1>
-    <p class="header header__message">Please sign in so you can access the DSC AE-FUNAI Bootcamp platform and learn together with the community.</p>
+  <section class="header">
+    <img class="header__image" src="/assets/images/logo-vertical.png" alt="DSC AE-FUNAI logo">
+    <img class="header__image" src="/assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
+    <h1 class="header__title">Welcome</h1>
+    <p class="header__message">Please sign in so you can access the DSC AE-FUNAI Bootcamp platform and learn together with the community.</p>
   </section>
-  <div class="sign-in sign-in__container">
+  <div class="sign-in">
     <div class="mdl-spinner mdl-js-spinner is-active sign-in__spinner"></div>
-    <div id="sign-in" class="sign-in sign-in__wrapper mdl-shadow--2dp"></div>
+    <div id="sign-in" class="sign-in__wrapper mdl-shadow--2dp"></div>
     <div class="mdl-card mdl-shadow--2dp signed-in signed-in__container element--hide">
       <div class="mdl-card__title">
         <h2 class="mdl-card__title-text signed-in__signed-in-heading element--hide">Signed In</h2>
         <h2 class="mdl-card__title-text signed-in__verify-heading element--hide">Phone Verify Error</h2>
       </div>
       <div class="mdl-card__supporting-text">
-        <p>Dear <span class="signed-in signed-in__name signed-in__bold-text"></span>,<br>You are signed in with <span class="signed-in signed-in__email signed-in__bold-text"></span>.</p>
-        <p class="signed-in signed-in__signed-in-message element--hide">Enter the bootcamp from here or sign out to sign in with another account. Thank you!</p>
-        <p class="signed-in signed-in__verify-message element--hide">However, the phone number you just verified: <span class="signed-in signed-in__phone signed-in__bold-text"></span>, is currently in use by another DSC Member. Please re-verify with a different phone number. Thank you!</p>
+        <p>Dear <span class="signed-in__name signed-in__bold-text"></span>,<br>You are signed in with <span class="signed-in__email signed-in__bold-text"></span>.</p>
+        <p class="signed-in__signed-in-message element--hide">Enter the bootcamp from here or sign out to sign in with another account. Thank you!</p>
+        <p class="signed-in__verify-message element--hide">However, the phone number you just verified: <span class="signed-in__phone signed-in__bold-text"></span>, is currently in use by another DSC Member. Please re-verify with a different phone number. Thank you!</p>
       </div>
       <div class="mdl-card__actions mdl-card--border">
         <button onclick="reVerifyPhone()" class="mdl-button 
