@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DSC AE-FUNAI Bootcamp</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" type="text/css" href="/assets/styles/material.min.css">
-<link rel="stylesheet" type="text/css" href="/assets/styles/core.css">
-<link rel="stylesheet" type="text/css" href="/assets/styles/app.css">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-<link rel="manifest" href="/assets/icons/site.webmanifest">
-<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#4285f4">
-<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<link rel="stylesheet" type="text/css" href="assets/styles/material.min.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/core.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/app.css">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+<link rel="manifest" href="assets/icons/site.webmanifest">
+<link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#4285f4">
+<link rel="shortcut icon" href="assets/icons/favicon.ico">
 <meta name="msapplication-TileColor" content="#4285f4">
-<meta name="msapplication-TileImage" content="/assets/icons/mstile-144x144.png">
-<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="msapplication-TileImage" content="assets/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="assets/icons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 <meta name="description" content="DSC AE-FUNAI Bootcamp. Learn together with the community.">
 </head>
@@ -25,35 +25,126 @@
   <header class="mdl-layout__header mdl-color-text--brown-900 mdl-shadow--4dp">
     <div class="mdl-layout__header-row">
       <a href="#" class="nav-link__logo nav-link--active">
-        <img class="mdl-layout-title mdl-layout-title__image" src="/assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
+        <img class="mdl-layout-title mdl-layout-title__image" src="assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
         <span class="mdl-layout-title mdl-layout-title__text nav-link--active">Bootcamp</span>
       </a>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="https://bit.ly/dscaefunaiwhatsapp" target="_blank" rel="noopener noreferrer"><i class="material-icons" aria-hidden><img src="/assets/images/whatsapp.svg"></i> Support</a>
-        <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="/profile.html"><i class="material-icons" aria-hidden>settings</i> Profile</a>
+        <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="https://bit.ly/dscaefunaiwhatsapp" target="_blank" rel="noopener noreferrer"><i class="material-icons" aria-hidden><img src="assets/images/whatsapp.svg"></i> Support</a>
+        <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="profile.html"><i class="material-icons" aria-hidden>settings</i> Profile</a>
         <button onclick="signOut()" class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons" aria-hidden>person_remove</i> Sign Out</button>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer mdl-layout--small-screen-only">
     <a href="#" class="nav-link__logo nav-link--active mdl-js-button mdl-js-ripple-effect">
-      <img class="mdl-layout-title mdl-layout-title__image" src="/assets/images/logo-vertical.png" alt="DSC AE-FUNAI logo">
+      <img class="mdl-layout-title mdl-layout-title__image" src="assets/images/logo-vertical.png" alt="DSC AE-FUNAI logo">
       <span class="mdl-layout-title mdl-layout-title__text nav-link--active">Bootcamp</span>
     </a>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="https://bit.ly/dscaefunaiwhatsapp" target="_blank" rel="noopener noreferrer"><i class="material-icons" aria-hidden><img src="/assets/images/whatsapp.svg"></i> Support</a>
-      <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="/profile.html"><i class="material-icons" aria-hidden>settings</i> Profile</a>
+      <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="https://bit.ly/dscaefunaiwhatsapp" target="_blank" rel="noopener noreferrer"><i class="material-icons" aria-hidden><img src="assets/images/whatsapp.svg"></i> Support</a>
+      <a class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect" href="profile.html"><i class="material-icons" aria-hidden>settings</i> Profile</a>
       <button onclick="signOut()" class="mdl-navigation__link nav-item mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons" aria-hidden>person_remove</i> Sign Out</button>
   </div>
-
   <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here --></div>
+    <div class="page-content">
+	  <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Days</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#day">Day 1</a>
+            <a href="#day">Day 2</a>
+            <a href="#day">Day 3</a>
+			<a href="#day">Day 4</a>
+			<a href="#day">Day 5</a>
+			<a href="#day">Day 6</a>
+            <a href="#day">Day 7</a>
+            <a href="#day">Day 8</a>
+			<a href="#day">Day 9</a>
+			<a href="#day">Day 10</a>
+			<a href="#day">Day 11</a>
+            <a href="#day">Day 12</a>
+            <a href="#day">Day 13</a>
+			<a href="#day">Day 14</a>
+			<a href="#day">Day 15</a>
+			<a href="#day">Day 16</a>
+            <a href="#day">Day 17</a>
+            <a href="#day">Day 18</a>
+			<a href="#day">Day 19</a>
+			<a href="#day">Day 20</a>
+			<a href="#day">Day 21</a>
+            <a href="#day">Day 22</a>
+            <a href="#day">Day 23</a>
+			<a href="#day">Day 24</a>
+			<a href="#day">Day 25</a>
+			<a href="#day">Day 26</a>
+            <a href="#day">Day 27</a>
+            <a href="#day">Day 28</a>
+			<a href="#day">Day 29</a>
+			<a href="#day">Day 30</a>
+          </div>
+      </div>
+	  <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+	<div id="overview">
+	  <p>Welcome to DSC AE-FUNAI bootcamp!<br>
+	  We are excited that you have chosen to be part of this<br> exciting coding bootcamp experience. Expect to be<br> challenged.
+	  Our experienced mentors are ever ready<br> to guide you. Do well to read and follow the <a href="#instructions" style="text-decoration: none;">instructions</a><br> of this bootcamp.
+	  The bootcamp will last for 30 days.<br> Learners are expected to check in every day. Links to<br> the resources to learn from will be provided each day<br>
+	  and assignment(s) will be given according to what you<br> have learnt. You are expected to submit your assignment<br> and your mentors will mark and award scores.</p>
+	</div>
+	<button type="button" class="collapsible">View details</button>
+	    <div class="content">
+	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+		  Sed ultrices tortor a erat varius bibendum. Nam nec dignissim <br>
+		  quam. Quisque eleifend sed neque nec convallis. Aliquam <br>
+		  facilisis loborti molestie. Nulla facilisi. Nunc vel tellus<br>
+		  massa. Etiam pulvinar, lorem a maximus feugiat, dolor libero<br>
+		  porttitor magna, in ornare nisi nibh vel ipsum. Integer rhoncus<br>
+		  .</p>
+	</div>
+	<script>
+	var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+	</script>
+	
+	</div>
   </main>
 
   <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer__left-section">
-      <img class="mdl-logo mdl-footer-logo" src="/assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
+      <img class="mdl-logo mdl-footer-logo" src="assets/images/logo-horizontal.png" alt="DSC AE-FUNAI logo">
     </div>
     <div class="mdl-mini-footer__right-section">
       <ul class="mdl-mini-footer__link-list">
