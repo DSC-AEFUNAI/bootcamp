@@ -56,11 +56,27 @@
   color: var(--black) !important;
 }
 
-.mdl-mini-footer {
+.mdl-mega-footer {
   background-color: var(--white);
   box-shadow: 0 -2px 2px 0 rgba(0,0,0,.14), 
     0 -3px 1px -2px rgba(0,0,0,.2),
     0 -1px 5px 0 rgba(0,0,0,.12);
+  color: var(--grey-text);
+}
+
+.mdl-mega-footer__content {
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .mdl-mega-footer__drop-down-section {
+    width: 33%;
+  }
+}
+
+.mdl-mega-footer__heading {
   color: var(--black);
 }
 
@@ -68,7 +84,13 @@
   width: 312px;
 }
 
-.mdl-mini-footer__link-list a {
-  font-size: 16px;
+@media (max-width: 360px) {
+  .mdl-footer-logo {
+    width: 272px;
+  }
+}
+
+.mdl-mega-footer__link-list a {
   text-transform: capitalize;
+  font-weight: normal;
 }
